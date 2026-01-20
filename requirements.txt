@@ -1,0 +1,43 @@
+# Django et extensions
+Django==5.0.1
+djangorestframework==3.14.0
+djangorestframework-simplejwt==5.3.1
+django-cors-headers==4.3.1
+django-filter==23.5
+
+# Base de données
+psycopg2-binary==2.9.9
+
+# Celery pour les tâches asynchrones
+celery==5.3.6
+redis==5.0.1
+
+# Utilitaires
+python-dotenv==1.0.0
+Pillow==10.2.0
+
+# Gestion de fichiers
+openpyxl==3.1.2
+pandas==2.2.0
+
+# Sécurité
+cryptography==42.0.1
+
+# Development & Testing
+pytest==7.4.4
+pytest-django==4.7.0
+pytest-cov==4.1.0
+factory-boy==3.3.0
+faker==22.0.0
+
+# Code quality
+flake8==7.0.0
+black==23.12.1
+isort==5.13.2
+
+# Production
+gunicorn==21.2.0
+whitenoise==6.6.0
+
+# Monitoring (optionnel)
+sentry-sdk==1.40.0

@@ -8,7 +8,6 @@ on:
 
 jobs:
   claude:
-    # Only run when @claude is mentioned
     if: contains(github.event.comment.body, '@claude')
     runs-on: ubuntu-latest
     
@@ -26,80 +25,27 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
 ```
 
-### Étape 3 : Commit le fichier
+**ATTENTION** : 
+- Ne modifiez PAS les espaces
+- Copiez exactement comme affiché
+- Chaque niveau d'indentation = 2 espaces (pas de tabs)
+
+### Étape 3 : Sauvegarder
 
 **1. Scrollez en bas**
 
-**2. Vous voyez "Commit new file"**
+**2. Commit message** : `Fix YAML syntax error`
 
-**3. Cliquez sur le bouton vert "Commit new file"** (ou "Commit changes")
-
----
-
-## Après avoir créé ce fichier
-
-### Maintenant, ajoutez le secret ANTHROPIC_API_KEY
-
-**1. Toujours dans votre dépôt CGTSIM, cliquez sur "Settings"** (en haut)
-
-**2. Dans le menu de gauche, cliquez sur "Secrets and variables"**
-
-**3. Cliquez sur "Actions"**
-
-**4. Cliquez sur "New repository secret"**
-
-**5. Configurez le secret** :
-   - **Name** : `ANTHROPIC_API_KEY`
-   - **Secret** : Votre clé API Anthropic (celle qui commence par `sk-ant-api03-...`)
-
-**6. Cliquez sur "Add secret"**
+**3. Cliquez sur "Commit changes"**
 
 ---
 
-## Si vous n'avez pas encore de clé API
+## Après la correction
 
-Avant de continuer, vous devez obtenir une clé API :
+### Re-tester l'intégration
 
-**1. Allez sur** : https://console.anthropic.com/
+**1. Retournez sur votre issue #1**
 
-**2. Connectez-vous** avec votre compte (jmarc_roussel@hotmail.com)
-
-**3. Menu de gauche → "API Keys"**
-
-**4. Cliquez sur "+ Create Key"**
-
-**5. Name** : `GitHub Actions CGTSIM`
-
-**6. Cliquez sur "Create Key"**
-
-**7. COPIEZ LA CLÉ IMMÉDIATEMENT** et collez-la dans Notepad
-
-**8. (Important) Vérifiez la facturation** :
-   - Menu "Settings" → "Billing"
-   - Ajoutez une carte de crédit si pas déjà fait
-   - Ajoutez des crédits (ex: $10)
-   - L'utilisation via GitHub Actions est facturée séparément de votre Claude Pro
-
----
-
-## Tester l'intégration
-
-Une fois que :
-- ✅ Le fichier `.github/workflows/claude-code.yml` est créé
-- ✅ Le secret `ANTHROPIC_API_KEY` est ajouté
-- ✅ Vous avez des crédits dans console.anthropic.com
-
-**Testez avec une issue** :
-
-**1. Dans votre dépôt CGTSIM, cliquez sur "Issues"**
-
-**2. Cliquez sur "New issue"**
-
-**3. Créez une issue de test** :
-   - Title : `Test intégration Claude`
-   - Description : `Vérification que Claude répond`
-   - Cliquez sur "Submit new issue"
-
-**4. Dans un commentaire, tapez** :
+**2. Ajoutez un NOUVEAU commentaire** :
 ```
-@claude Bonjour ! Peux-tu confirmer que l'intégration fonctionne ?
+@claude Test après correction - peux-tu répondre maintenant ?
